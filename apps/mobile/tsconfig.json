@@ -1,21 +1,31 @@
 {
   "extends": "@workspace/typescript-config/react-native.json",
   "compilerOptions": {
-    "moduleResolution": "nodenext",
+    "moduleResolution": "NodeNext",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],
-      "@workspace/ui": ["../../packages/ui"]
+      "@/*": [
+        "./src/*"
+      ],
+      "@workspace/ui": [
+        "../../packages/ui"
+      ]
     },
-    "types": ["nativewind/types"]
+    "types": [
+      "nativewind/types"
+    ],
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "jsx": "react-jsx"
   },
   "include": [
     "**/*.ts",
     "**/*.tsx",
     ".expo/types/**/*.ts",
-    "expo-env.d.ts"
+    "expo-env.d.ts",
+    "nativewind-env.d.ts"
   ],
   "exclude": [
     "node_modules"
   ]
-} 
+}

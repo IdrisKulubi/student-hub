@@ -1,10 +1,7 @@
-module.exports = function (api) {
+ymodule.exports = function (api) {
   api.cache(true);
   return {
-    presets: [
-      ['babel-preset-expo', { jsxImportSource: 'nativewind' }],
-      'nativewind/babel',
-    ],
+    presets: ['babel-preset-expo'],
     plugins: [
       [
         'module-resolver',
@@ -12,12 +9,11 @@ module.exports = function (api) {
           root: ['./'],
           alias: {
             '@': './src',
-            '@workspace/ui': '../packages/ui',
+            '@workspace/ui': '../../packages/ui',
           },
         },
       ],
-      // Required for expo-router
-      'expo-router/babel',
+      // Keep this last
       'react-native-reanimated/plugin',
     ],
   };
